@@ -1,1 +1,184 @@
 
+<html>
+<html lang="en-US" >
+
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CALCULATOR</title>
+<link rel="icon" href="image/CSECODE.jpg" type="image/icon">
+<meta name="viewport" content="width=device-width ,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="cssBox.css"/>
+<script src="jquery.js"></script>
+<script src="javascriptBox.js"></script>
+
+
+
+<meta http-equiv="Content-Language" content="en_us"/>
+<meta name="Description" content="Well organized and easy to understand Web Development and Another Programming Language  tutorials with lots of examples of how to use HTML, CSS, JAVASCRIPT, SQL, PHP, JAVA,JQUERY,AJAX, C and C++ GRAPHICS,C++ Language,ANDROID,C Language,and Database, Daily practice ">
+
+<meta name="keyboard" content=" C LANGUAGE, C++ LANGUAGE ,AJAX,JQUERY,DOM,HTML,CSS,PHP,JAVASCRIPT,JAVA,PHP,DATABASE,AND XML Tutorials ,quiz,lessons, daily practics ,All programming,Coding,">
+<meta name="author" content="UJJAWAL KUMAR">
+<script>
+function insert(num)
+{
+document.form.textview.value=document.form.textview.value+num;
+}
+function equal()
+{
+var exp = document.form.textview.value;
+if(exp)
+{
+document.form.textview.value=eval(exp)
+}
+}
+function clean()
+{
+document.form.textview.value="";
+}
+function back()
+{
+var exp =  document.form.textview.value;   
+    document.form.textview.value =exp.substring(0,exp.length-1);
+
+}
+</script>
+<style>
+
+#updatezoom
+{
+    background: #2B3856;
+//background: linear-gradient(lightgray,darkturquoise);
+font-weight:bold;
+height:40px;
+color:pink;
+}
+#outer-table
+{
+//border:1px solid ;
+margin:20px auto;
+
+}
+#outer-table > .inner-table
+{
+border: 1px groove green;
+display:inline-block;
+height:390px;
+width:280px;
+//background:linear-gradient(to right,#e91e63,#3f51b5);
+background: #2B3856;
+//transition:1s;
+box-shadow:4px 4px 4px #000;
+}
+
+
+
+*{
+margin:0;
+padding:0;
+}
+.button
+{
+width:50px;
+height:50px;
+font-size:25px;
+margin:2;
+cursor:pointer;
+background:#607d8b;
+border:none;
+color:white;
+}
+.textview
+{
+width:217;
+margin:5;
+font-size:25;
+padding:5;
+border:none;
+color:#607d8b;
+}
+.main
+{
+
+
+}
+.bg
+{
+//background:linear-gradient(to right,#e91e63,#3f51b5);
+//height:100%;
+
+}
+body
+{
+ background:#06213F!important;    
+}
+
+</style>
+</head>
+<body>
+   <br/><br/><br/>
+<center>
+<div id="outer-table"> 
+
+<div class="inner-table">
+    
+
+<td><center id="updatezoom" style="width:277px;">CALCULATOR</center>
+ </td></tr>
+
+    
+    
+    
+    
+    
+    
+<div class="bg">  </div>
+<center>
+<div class="main">
+<form name="form">
+<input class="textview" name="textview">
+
+</form>
+
+
+<table>
+<tr>
+<td><input class="button" type="button"  value="C" onclick="clean()"></td>
+<td><input class="button" type="button" value="X" onclick="back()"></td>
+<td><input class="button" type="button" onclick="insert('/')" value="/"></td>
+<td><input class="button" type="button" onclick="insert('*')" value="*"></td>
+</tr>
+<tr>
+<td><input class="button" type="button" onclick="insert(7)" value="7"></td>
+<td><input class="button" type="button" onclick="insert(8)"  value="8"></td>
+<td><input class="button" type="button" onclick="insert(9)" value="9"></td>
+<td><input class="button" type="button"  onclick="insert('-')"   value="-" ></td>
+</tr>
+<tr>
+<td><input class="button" type="button" onclick="insert(4)" value="4"></td>
+<td><input class="button" type="button" onclick="insert(5)"  value="5"></td>
+<td><input class="button" type="button" onclick="insert(6)" value="6"></td>
+<td><input class="button" type="button" onclick="insert('+')" value="+"></td>
+</tr>
+<tr>
+<td><input class="button" type="button" onclick="insert(1)" value="1"></td>
+<td><input class="button" type="button" onclick="insert(2)" value="2"></td>
+<td><input class="button" type="button" onclick="insert(3)"  value="3"></td>
+<td rowspan=5><input class="button" style="height:106" type="button" onclick="equal()" value="="></td>
+</tr>
+<tr>
+<td colspan=2><input class="button" style="width:106" type="button" onclick="insert(0)" value="0"></td>
+<td><input class="button" type="button" onclick="insert('.')" value="."></td>
+
+</tr>
+</table>
+</div>
+</center>
+</div>
+</div>
+<br/>
+
+
+</div>
+
+
+</body>
+</html>
