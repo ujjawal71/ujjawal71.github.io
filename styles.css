@@ -1,0 +1,485 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+}
+a
+{
+  color: #b1eaff;
+  text-decoration: none;
+}
+body {
+  background: #585c68;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.semi-bold {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.ujjawal {
+  width: 100%;
+  height: auto;
+  display: flex;
+}
+
+.ujjawal .resume_left {
+  width: 480px;
+  background: #283244;
+}
+
+.ujjawal .resume_left .resume_profile {
+  width: 100%;
+  height: 280px;
+}
+
+.ujjawal .resume_left .resume_profile img {
+  width: 100%;
+  height: 100%;
+}
+
+.ujjawal .resume_left .resume_content {
+  padding: 0 25px;
+}
+
+.ujjawal .title {
+  margin-bottom: 20px;
+}
+
+.ujjawal .resume_left .bold {
+  color: #fff;
+}
+
+.ujjawal .resume_left .regular {
+  color: #b1eaff;
+}
+
+.ujjawal .resume_item {
+  padding: 25px 0;
+  border-bottom: 1px solid #000000;
+}
+
+.ujjawal .resume_left .resume_item:last-child,
+.ujjawal .resume_right .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.ujjawal .resume_left ul li {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.ujjawal .resume_left ul li:last-child {
+  margin-bottom: 0;
+}
+
+.ujjawal .resume_left ul li .icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #0bb5f4;
+  border-radius: 50%;
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
+}
+
+.ujjawal .icon i,
+.ujjawal .resume_right .resume_hobby ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ujjawal .resume_left ul li .data {
+  color: #b1eaff;
+}
+
+.ujjawal .resume_left .resume_skills ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ujjawal .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+}
+
+.ujjawal .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background:#283244;
+  position: relative;
+}
+
+.ujjawal .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+}
+
+.ujjawal .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #adff2f;
+}
+
+.ujjawal .resume_left .resume_social .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.ujjawal .resume_right {
+  width: 100%;
+   background: -moz-linear-gradient(top, rgba(147,193,255,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(147,193,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, rgba(147,193,255,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, rgba(147,193,255,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, rgba(147,193,255,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+        background: linear-gradient(top, rgba(147,193,255,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+        padding: 25px;
+}
+
+.ujjawal .resume_right .bold {
+  color: #000000;
+}
+
+.ujjawal .resume_right .resume_work ul,
+.ujjawal .resume_right .resume_education ul {
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.ujjawal .resume_right ul li {
+  position: relative;
+}
+
+.ujjawal .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.ujjawal .resume_right ul li .info {
+  margin-bottom: 20px;
+}
+
+.ujjawal .resume_right ul li:last-child .info {
+  margin-bottom: 0;
+}
+
+.ujjawal .resume_right .resume_work ul li:before,
+.ujjawal .resume_right .resume_education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #0bb5f4;
+}
+
+.ujjawal .resume_right .resume_work ul li:after,
+.ujjawal .resume_right .resume_education ul li:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #0bb5f4;
+}
+
+
+
+
+
+.ujjawal .resume_right .resume_hobby ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ujjawal .resume_right .resume_hobby ul li {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #0bb5f4;
+  border-radius: 50%;
+  position: relative;
+  color: #0bb5f4;
+}
+
+.ujjawal .resume_right .resume_hobby ul li i {
+  font-size: 30px;
+}
+
+.ujjawal .resume_right .resume_hobby ul li:before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -52px;
+  width: 50px;
+  height: 2px;
+  background: #0bb5f4;
+}
+
+.ujjawal .resume_right .resume_hobby ul li:last-child:before {
+  display: none;
+}
+
+
+
+
+  
+  
+/* Fallback for hidden attribute */
+
+hidden { display: none; }
+
+/**
+ * Keyframes for autoplay
+ */
+@-webkit-keyframes 
+autoplay {   /* position of the first slide */
+  0% {
+ left: 0;
+}
+  /* position of the second slide */
+  10% {
+ left: -40.625rem;
+}
+  /* position of the third slide */
+  20% {
+ left: -81.25rem;
+}
+  /* position of the fourth slide */
+  30% {
+ left: -121.875rem;
+}
+
+  40% {
+ left: -181.875rem;
+}
+
+  50% {
+ left: -200.875rem;
+}
+
+  60% {
+ left: -221.875rem;
+}
+
+
+  70% {
+ left: -241.875rem;
+}
+
+  76% {
+ left: -281.875rem;
+}
+
+  86% {
+ left: -300.875rem;
+}
+
+  90% {
+ left: -341.875rem;
+}
+
+  94% {
+ left: -381.875rem;
+}
+
+
+  96% {
+ left: -441.875rem;
+}
+  98% {
+ left: -521.875rem;
+}
+
+}
+ 
+ 
+
+@keyframes 
+autoplay {   /* position of the first slide */
+  0% {
+ left: 0;
+}
+  /* position of the second slide */
+  10% {
+ left: -40.625rem;
+}
+  /* position of the third slide */
+  20% {
+ left: -81.25rem;
+}
+  /* position of the fourth slide */
+  30% {
+ left: -121.875rem;
+}
+
+  40% {
+ left: -181.875rem;
+}
+
+  50% {
+ left: -200.875rem;
+}
+
+  60% {
+ left: -221.875rem;
+}
+
+
+  70% {
+ left: -241.875rem;
+}
+
+  76% {
+ left: -281.875rem;
+}
+
+  86% {
+ left: -300.875rem;
+}
+
+  90% {
+ left: -341.875rem;
+}
+
+  94% {
+ left: -381.875rem;
+}
+
+
+  96% {
+ left: -441.875rem;
+}
+  98% {
+ left: -521.875rem;
+}
+
+
+
+
+
+}
+
+/**
+ * Slider
+ */
+
+.slider {
+  position: relative;
+  /* top margin is for purposes of demo */
+  margin-top: 3rem;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  width: 100%;
+  height: 400px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.slider__list {
+  position: absolute;
+  left: 0;
+  width: 10062.5rem;
+}
+
+.slider__slide { float: left; }
+
+/**
+ * Slider control
+ */
+
+.slider__control {
+  margin-right: auto;
+  margin-left: auto;
+  width: 4.5rem;
+  font-family: sans-serif;
+}
+
+.slider__control label {
+  position: relative;
+  display: block;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 4.5rem;
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  color: transparent;
+  background: #ddd;
+  border-radius: 2rem;
+  cursor: pointer;
+  -webkit-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+}
+
+.slider__control label:before {
+  content: "AutoSlide";
+  position: absolute;
+  top: 2.5rem;
+  left: 0;
+  color: #333;
+ font-size: .95rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.slider__control label:after {
+  content: "";
+  position: absolute;
+ top: .25rem;
+ left: .25rem;
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 2rem;
+  background: #fff;
+  -webkit-transition: left 0.15s ease-out;
+  transition: left 0.15s ease-out;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slider__switch:checked + .slider > .slider__list {
+  -webkit-animation-name: autoplay;
+  animation-name: autoplay;
+  /* This will change the time it takes to move to next slide */
+  -webkit-animation-duration: 20s;
+  animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.slider__switch:checked + .slider + .slider__control > label { background: #6495ed; }
+
+.slider__switch:checked + .slider + .slider__control > label:after { left: 2.75rem; }
+  
+  
+  
+  
+  
