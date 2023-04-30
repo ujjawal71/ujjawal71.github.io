@@ -1,0 +1,47 @@
+*
+{
+margin:0px;
+padding:0px;
+}
+html{
+    font-family:sans-serif;
+    -ms-text-size-adjust:100%;
+    -webkit-text-size-adjust:100%
+}
+
+
+body{
+    margin:0;
+    overflow-x:hidden;
+   // font-family:Lato !important;
+
+
+
+font-family:arial;
+}
+
+#clockadj
+{
+margin:20px auto;
+}
+
+a
+{
+text-decoration:none;
+}
+body
+{
+width: 100%;
+background-color:#F4F2F1;
+//background-color:#e6e6e6;
+//background-color:#FFFFFF;
+
+//background-image:url('image/bg123.png');
+font-family:sans-serif;
+
+//font-family:Arial;
+//font-weight:blod;
+
+
+
+}
