@@ -1,0 +1,184 @@
+ok
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Update information page for app users.">
+    <meta name="author" content="csecoder.com">
+    <title>App Update Information</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="styles/main.css" rel="stylesheet">
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="scripts/common_noti.js"></script>
+
+    <!-- Google Translate -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'hi,en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <style>
+        .content-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .update-details {
+            display: none;
+        }
+        .goog-logo-link {
+            display: none !important;
+        }
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+        .whats-new-section, .ai-features-section {
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+    </style>
+</head>
+<body onload="loadScreen()" onresize="resizeScreen()">
+
+    <div class="container">
+        <!-- Google Translate Element -->
+        <div id="google_translate_element" class="mb-3"></div>
+
+        <!-- Header Section -->
+        <header class="text-center my-4">
+            <img src="images/Your_Logo.png" alt="Your Logo" class="img-fluid">
+            <h1 class="display-4">Welcome to csecoder.com</h1>
+        </header>
+        
+        <!-- Language Selection -->
+        <div class="row mb-3">
+            <div class="col-md-10"></div>
+            <div class="col-md-2">
+                <select id="sel_lang" name="sel_lang" class="form-control" onchange="handleLangChange(this.value)">
+                    <option value="">Select Language</option>
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Hidden Language Selectors -->
+        <div style="display: none;">
+            <select id="sel_lang_hidden" name="sel_lang_hidden" class="form-control" onchange="changeLangHidden(this.value)">
+                <option value="KO">../../path-to-kor.html</option>
+                <option value="SG">../../path-to-zh-sg.html</option>
+            </select>
+        </div>
+
+        <!-- Information Section -->
+        <div class="content-section my-4">
+            <h2 class="section-title">Software Update Information</h2>
+            <p>This update includes improvements to functions as listed below. The exact changes may differ depending on your device model, country, and service provider.</p>
+            <p>To get the best from your device, please keep it up to date and regularly check for software updates.</p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="content-section my-4">
+            <h2 class="section-title">Latest Updates</h2>
+            <p>We are excited to bring you the latest updates to our Android app. This release includes various enhancements and fixes to improve your overall experience. Here’s a summary of what’s new:</p>
+            <ul>
+                <li><strong>Enhanced User Interface:</strong> A more intuitive design for easier navigation.</li>
+                <li><strong>New Notification System:</strong> Keep informed of important updates and events.</li>
+                <li><strong>Performance Improvements:</strong> Faster load times and smoother operation.</li>
+                <li><strong>Bug Fixes:</strong> Addressed known issues for enhanced stability.</li>
+                <li><strong>Additional Language Support:</strong> Expanded support for more languages and regional settings.</li>
+            </ul>
+            <p>We value your feedback. If you encounter any issues or have suggestions for future updates, please let us know.</p>
+            <p>Thank you for being a valued user of our app!</p>
+        </div>
+
+        <!-- AI Features Section -->
+        <div class="ai-features-section content-section my-4">
+            <h2 class="section-title">New AI Features</h2>
+            <p>We are thrilled to introduce new AI-driven features designed to support and enhance the learning experience for students:</p>
+            <ul>
+                <li><strong>AI-Powered Study Assistant:</strong> Provides personalized study tips and resources based on user progress and preferences.</li>
+                <li><strong>Intelligent Question Answering:</strong> Quickly retrieves and provides answers to complex queries, aiding in faster learning.</li>
+                <li><strong>Smart Recommendations:</strong> Suggests relevant content and study materials to help students stay on track with their learning goals.</li>
+                <li><strong>Automated Feedback:</strong> Offers instant feedback on practice exercises to help students improve and stay motivated.</li>
+            </ul>
+            <p>We believe these AI features will greatly benefit students by providing more tailored and efficient learning support. We look forward to hearing your feedback on these new tools!</p>
+        </div>
+
+        <!-- Upcoming Features Section -->
+        <div class="whats-new-section text-center">
+            <button class="btn btn-primary" onclick="toggleUpdateDetails()">What's Coming Next</button>
+            
+            <div id="updateDetails" class="update-details mt-3">
+                <h2 class="section-title">Upcoming Features</h2>
+                <p>We are actively working on exciting new features for our next update. Here’s a preview of what’s coming:</p>
+                <ul>
+                    <li><strong>Feature A:</strong> Description of upcoming feature A.</li>
+                    <li><strong>Feature B:</strong> Description of upcoming feature B.</li>
+                    <li><strong>Feature C:</strong> Description of upcoming feature C.</li>
+                </ul>
+                <p>Stay tuned for more details as we get closer to the release!</p>
+            </div>
+        </div>
+
+        <!-- Copyright Information -->
+        <footer class="text-center mt-4">
+            <p>&copy; <span id="currentYear"></span> csecoder.com. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Set the current year for the copyright footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Function to toggle the visibility of the update details
+        function toggleUpdateDetails() {
+            var updateDetails = document.getElementById('updateDetails');
+            if (updateDetails.style.display === 'none' || updateDetails.style.display === '') {
+                updateDetails.style.display = 'block';
+            } else {
+                updateDetails.style.display = 'none';
+            }
+        }
+
+        // Handle language change
+        function handleLangChange(lang) {
+            if (lang) {
+                var frame = document.createElement('iframe');
+                frame.src = `https://translate.google.com/translate?hl=${lang}&sl=en&tl=${lang}&u=${window.location.href}`;
+                frame.style.display = 'none';
+                document.body.appendChild(frame);
+            }
+        }
+    </script>
+    
+</body>
+</html>
