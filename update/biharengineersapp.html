@@ -47,9 +47,6 @@
         .goog-te-gadget {
             color: transparent !important;
         }
-        .whats-new-section, .ai-features-section {
-            margin-top: 20px;
-        }
         .section-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -62,6 +59,20 @@
         .btn-primary:hover {
             background-color: #0056b3;
             border-color: #004085;
+        }
+        .ai-features-section ul, .upcoming-features-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .ai-features-section ul li, .upcoming-features-section ul li {
+            margin-bottom: 10px;
+        }
+        .d-flex {
+            display: flex;
+            align-items: center;
+        }
+        .ml-2 {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -124,16 +135,7 @@
             <p><strong>Release Date:</strong> September 3, 2024</p>
         </div>
 
-    
-
-        <!-- Upcoming Features Section -->
-        <div class="whats-new-section text-center">
-            <button class="btn btn-primary" onclick="toggleUpdateDetails()">What's Coming Next</button>
-            
-            <div id="updateDetails" class="update-details mt-3">
-                <h5>Upcoming Features</h5>
-                <p>We are actively working on exciting new features for our next update. Here’s a preview of what’s coming:</p>
-                 <!-- AI Features Section -->
+        <!-- AI Features Section -->
         <div class="ai-features-section content-section my-4">
             <h5>New AI Features</h5>
             <p>We are thrilled to introduce new AI-driven features designed to support and enhance the learning experience for students:</p>
@@ -145,6 +147,19 @@
             </ul>
             <p>We believe these AI features will greatly benefit students by providing more tailored and efficient learning support. We look forward to hearing your feedback on these new tools!</p>
         </div>
+
+        <!-- Upcoming Features Section -->
+        <div class="upcoming-features-section content-section my-4">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">What's Coming Next</h5>
+                <button class="btn btn-primary ml-2" onclick="toggleUpdateDetails()">Show Details</button>
+            </div>
+            <div id="updateDetails" class="update-details mt-3">
+                <p>We are actively working on exciting new features for our next update. Here’s a preview of what’s coming:</p>
+                <ul>
+                    <li><strong>Feature A:</strong> Will Update.</li>
+                   
+                </ul>
                 <p>Stay tuned for more details as we get closer to the release!</p>
             </div>
         </div>
