@@ -8,181 +8,193 @@
     <meta name="author" content="csecoder.com">
     <title>App Update Information</title>
     
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS (Optional) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom styles -->
-    <link href="styles/main.css" rel="stylesheet">
 
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="scripts/common_noti.js"></script>
-
-    <!-- Google Translate -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'hi,en',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+    <!-- Custom Styles -->
     <style>
-        .content-section {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .update-details {
-            display: none;
-        }
-        .goog-logo-link {
-            display: none !important;
-        }
-        .goog-te-gadget {
-            color: transparent !important;
-        }
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
             color: #333;
         }
-        .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #004085;
-        }
-        .ai-features-section ul, .upcoming-features-section ul {
-            list-style-type: disc;
-            padding-left: 20px;
-        }
-        .ai-features-section ul li, .upcoming-features-section ul li {
-            margin-bottom: 10px;
-        }
-        .d-flex {
+
+        header {
             display: flex;
+            justify-content: space-between;
             align-items: center;
         }
-        .ml-2 {
-            margin-left: 10px;
+
+        .logo {
+            height: 50px;
+        }
+
+        select {
+            padding: 5px 10px;
+            font-size: 14px;
+        }
+
+        .update-info {
+            margin-top: 20px;
+        }
+
+        .notice {
+            background-color: #e0eaf7;
+            padding: 10px;
+            border-left: 5px solid #1f77d0;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #1f77d0;
+            margin-bottom: 10px;
+        }
+
+        .update-section {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .update-section h2 {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .update-section h3 {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #1f77d0;
+        }
+
+        .update-section p, .update-section ul {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            list-style: disc;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Button Styles */
+        .toggle-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #1f77d0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+
+        .toggle-btn:hover {
+            background-color: #155a8a;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
-<body onload="loadScreen()" onresize="resizeScreen()">
+<body>
 
     <div class="container">
-        <!-- Google Translate Element -->
-        <div id="google_translate_element" class="mb-3"></div>
-
         <!-- Header Section -->
-        <header class="text-center my-4">
-            <div>
-                <img src="images/ic_launcher_foreground.png" alt="Your Logo" class="img-fluid" style='width:140px;height:140px;'> 
-                <h4>BIHAR ENGINEERS</h4>
-            </div>
-        </header>
-        
-        <!-- Language Selection -->
-        <div class="row mb-3">
-            <div class="col-md-10"></div>
-            <div class="col-md-2">
-                <select id="sel_lang" name="sel_lang" class="form-control" onchange="handleLangChange(this.value)">
-                    <option value="">Select Language</option>
-                    <option value="en">English</option>
-                    <option value="hi">Hindi</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Hidden Language Selectors -->
-        <div style="display: none;">
-            <select id="sel_lang_hidden" name="sel_lang_hidden" class="form-control" onchange="changeLangHidden(this.value)">
-                <option value="KO">../../path-to-kor.html</option>
-                <option value="SG">../../path-to-zh-sg.html</option>
+        <header>
+            <img src="images/ic_launcher_foreground.png" alt="Your Logo" class="logo">
+            <select id="sel_lang" name="sel_lang" onchange="handleLangChange(this.value)">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option>
             </select>
-        </div>
+        </header>
 
-        <!-- Information Section -->
-        <div class="content-section my-4">
-            <h5>Software Update Information</h5>
-            <p>This update includes improvements to functions as listed below. The exact changes may differ depending on your device model, country, and service provider.</p>
-            <p>To get the best from your device, please keep it up to date and regularly check for software updates.</p>
-        </div>
+        <!-- Update Information Section -->
+        <div class="update-info">
+            <p class="notice">
+                This update includes improvements to functions as listed below.<br>
+                The exact changes may differ depending on your device model<br>
+                To get the best from your device, please keep it up to date and regularly check for software updates.
+            </p>
 
-        <!-- Content Section -->
-        <div class="content-section my-4">
-            <h5>Latest Updates</h5>
-            <p>We are excited to bring you the latest updates to our Android app. This release includes various enhancements and fixes to improve your overall experience. Here’s a summary of what’s new:</p>
-            <ul>
-                <li><strong>Enhanced User Interface:</strong> A more intuitive design for easier navigation.</li>
-                <li><strong>New Notification System:</strong> Keep informed of important updates and events.</li>
-                <li><strong>Performance Improvements:</strong> Faster load times and smoother operation.</li>
-                <li><strong>Bug Fixes:</strong> Addressed known issues for enhanced stability.</li>
-                <li><strong>Additional Language Support:</strong> Expanded support for more languages and regional settings.</li>
-            </ul>
-            <p>We value your feedback. If you encounter any issues or have suggestions for future updates, please let us know.</p>
-            <p>Thank you for being a valued user of our app!</p>
-            <!-- Added Version and Release Date -->
-            <p><strong>Version:</strong> 11.7.5 (173)</p>
-            <p><strong>Release Date:</strong> September 3, 2024</p>
-        </div>
-
-        <!-- AI Features Section -->
-        <div class="ai-features-section content-section my-4">
-            <h5>New AI Features</h5>
-            <p>We are thrilled to introduce new AI-driven features designed to support and enhance the learning experience for students:</p>
-            <ul>
-                <li><strong>AI-Powered Study Assistant:</strong> Provides personalized study tips and resources based on user progress and preferences.</li>
-                <li><strong>Intelligent Question Answering:</strong> Quickly retrieves and provides answers to complex queries, aiding in faster learning.</li>
-                <li><strong>Smart Recommendations:</strong> Suggests relevant content and study materials to help students stay on track with their learning goals.</li>
-                <li><strong>Automated Feedback:</strong> Offers instant feedback on practice exercises to help students improve and stay motivated.</li>
-            </ul>
-            <p>We believe these AI features will greatly benefit students by providing more tailored and efficient learning support. We look forward to hearing your feedback on these new tools!</p>
-        </div>
-
-        <!-- Upcoming Features Section -->
-        <div class="upcoming-features-section content-section my-4">
-            <div class="d-flex justify-content-between align-items-center">
-                <h5 class="mb-0">What's Coming Next</h5>
-                <button class="btn btn-primary ml-2" onclick="toggleUpdateDetails()">Show Details</button>
+            <h1>Bihar Engineers App</h1>
+            <div class="update-section">
+                <h2>Version: 11.7.5 (173)</h2>
+                <p>Release Date: September 3, 2024</p>
+                <p>Security Enhancements: Improved data protection, secure communication, and enhanced privacy measures within the app.</p>
             </div>
-            <div id="updateDetails" class="update-details mt-3">
-                <p>We are actively working on exciting new features for our next update. Here’s a preview of what’s coming:</p>
+            
+            <!-- Latest Updates -->
+            <div class="update-section">
+                <h2>Latest Updates</h2>
                 <ul>
-                    <li><strong>Feature A:</strong> Will Update.</li>
-                   
+                    <li><strong>Enhanced User Interface:</strong> A more intuitive design for easier navigation.</li>
+                    <li><strong>New Notification System:</strong> Keep informed of important updates and events.</li>
+                    <li><strong>Performance Improvements:</strong> Faster load times and smoother operation.</li>
+                    <li><strong>Bug Fixes:</strong> Addressed known issues for enhanced stability.</li>
+                    <li><strong>Additional Language Support:</strong> Expanded support for more languages and regional settings.</li>
                 </ul>
-                <p>Stay tuned for more details as we get closer to the release!</p>
+            </div>
+
+            <!-- AI Features Section -->
+            <div class="update-section">
+                <h2>New AI Features</h2>
+                <ul>
+                    <li><strong>AI-Powered Study Assistant:</strong> Provides personalized study tips and resources.</li>
+                    <li><strong>Intelligent Question Answering:</strong> Quickly retrieves answers to complex queries.</li>
+                    <li><strong>Smart Recommendations:</strong> Suggests relevant content and study materials.</li>
+                    <li><strong>Automated Feedback:</strong> Offers instant feedback on practice exercises.</li>
+                </ul>
+            </div>
+
+            <!-- Upcoming Features Section -->
+            <button class="toggle-btn" onclick="toggleVisibility()">What's Coming Next</button>
+            <div id="comingNext" class="update-section hidden">
+                <h2>What's Coming Next</h2>
+                <p>We are working on exciting new features for the next update. Stay tuned for more details!</p>
             </div>
         </div>
 
-        <!-- Copyright Information -->
-        <footer class="text-center mt-4">
+        <!-- Footer Section -->
+        <footer>
             <p>&copy; <span id="currentYear"></span> csecoder.com. All rights reserved.</p>
         </footer>
     </div>
 
     <script>
-        // Set the current year for the copyright footer
+        // Set the current year dynamically
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Function to toggle the visibility of the update details
-        function toggleUpdateDetails() {
-            var updateDetails = document.getElementById('updateDetails');
-            if (updateDetails.style.display === 'none' || updateDetails.style.display === '') {
-                updateDetails.style.display = 'block';
-            } else {
-                updateDetails.style.display = 'none';
-            }
-        }
 
         // Handle language change
         function handleLangChange(lang) {
@@ -193,7 +205,16 @@
                 document.body.appendChild(frame);
             }
         }
+
+        // Toggle visibility of the upcoming features section
+        function toggleVisibility() {
+            var comingNextSection = document.getElementById('comingNext');
+            if (comingNextSection.classList.contains('hidden')) {
+                comingNextSection.classList.remove('hidden');
+            } else {
+                comingNextSection.classList.add('hidden');
+            }
+        }
     </script>
-    
 </body>
 </html>
