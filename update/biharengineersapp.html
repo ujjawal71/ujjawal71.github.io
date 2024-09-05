@@ -62,7 +62,13 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 18px;
+            color: #1f77d0;
+            margin-bottom: 10px;
+        }
+  h6 {
+            font-size: 18px;
+            font-weight:bold;
             color: #1f77d0;
             margin-bottom: 10px;
         }
@@ -126,6 +132,16 @@
         .hidden {
             display: none;
         }
+
+    .professional-line {
+        border: none;          /* Remove default borders */
+        height: 14px;           /* Set height to 4px */
+        background-color: #ccc; /* Set your desired color */
+        margin: 20px 0;        /* Add some spacing around the line */
+        border-radius: 2px;    /* Add rounded edges for a smoother look */
+    }
+
+
     </style>
 </head>
 <body>
@@ -133,7 +149,10 @@
     <div class="container">
         <!-- Header Section -->
         <header>
-            <img src="images/ic_launcher_foreground.png" alt="Your Logo" class="logo">
+<div>
+            <img src="images/ic_launcher_foreground.png" alt="Logo" class="logo" style="width:80px;height:80px;">
+ <h6>BIHAR ENGINEERS</h6>
+   </div>
             <select id="sel_lang" name="sel_lang" onchange="handleLangChange(this.value)">
                 <option value="en">English</option>
                 <option value="hi">Hindi</option>
@@ -148,13 +167,36 @@
                 To get the best from your device, please keep it up to date and regularly check for software updates.
             </p>
 
-            <h1>Bihar Engineers App</h1>
+            <h1>Software release notes</h1>
+
+         <div class="update-section">
+                <h2>Version: 11.7.6 (xxx)</h2>
+                <p>Release Date: xxxxxxxx</p>
+                <p>Security Enhancements: Improved data protection, secure communication, and enhanced privacy measures within the app.</p>
+            </div>
+
+   <!-- Upcoming Features Section -->
+            <button class="toggle-btn" onclick="toggleVisibility()">What's Coming Next</button>
+            <div id="comingNext" class="update-section hidden">
+                <h2>What's Coming Next</h2>
+                <p>We are actively working on exciting new features for our next update. Here’s a preview of what’s coming:</p>
+              <h2>New Features</h2>
+                <ul>
+                    <li><strong>Feature A:</strong>  Will Update.</li></li>
+                  
+                </ul>
+                 <p>Stay tuned for more details as we get closer to the release!</p>
+            </div>
+        </div>
+
+<hr class="professional-line">
+
             <div class="update-section">
                 <h2>Version: 11.7.5 (173)</h2>
                 <p>Release Date: September 3, 2024</p>
                 <p>Security Enhancements: Improved data protection, secure communication, and enhanced privacy measures within the app.</p>
             </div>
-            
+  
             <!-- Latest Updates -->
             <div class="update-section">
                 <h2>Latest Updates</h2>
@@ -178,20 +220,7 @@
                 </ul>
             </div>
 
-            <!-- Upcoming Features Section -->
-            <button class="toggle-btn" onclick="toggleVisibility()">What's Coming Next</button>
-            <div id="comingNext" class="update-section hidden">
-                <h2>What's Coming Next</h2>
-                <p>We are actively working on exciting new features for our next update. Here’s a preview of what’s coming:</p>
-              <h2>New AI Features</h2>
-                <ul>
-                    <li><strong>Feature A:</strong>  Will Update.</li></li>
-                  
-                </ul>
-                 <p>Stay tuned for more details as we get closer to the release!</p>
-            </div>
-        </div>
-
+<hr class="professional-line">
         <!-- Footer Section -->
         <footer>
             <p>&copy; <span id="currentYear"></span> csecoder.com. All rights reserved.</p>
