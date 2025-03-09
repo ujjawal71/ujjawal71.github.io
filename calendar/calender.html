@@ -329,15 +329,20 @@ text-decoration:none;
 
 .image-container {
     width: 100%;
+    height: auto;
     overflow: hidden;
-    text-align: center;
+    touch-action: none; /* Allows pinch zoom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .zoomable-image {
     width: 100%;
     height: auto;
     max-width: 100%;
-    touch-action: none; /* Allows pinch zoom */
+    transform-origin: center;
+    cursor: grab;
   }
  
 </style>
@@ -402,8 +407,13 @@ return true;
 
 <script>
   let img = document.getElementById("zoomableImage");
+  let container = document.querySelector(".image-container");
+
   let scale = 1;
   let startDistance = 0;
+  let isDragging = false;
+  let startX = 0, startY = 0;
+  let translateX = 0, translateY = 0;
 
   function getDistance(touches) {
     let dx = touches[0].clientX - touches[1].clientX;
@@ -414,6 +424,10 @@ return true;
   img.addEventListener("touchstart", (e) => {
     if (e.touches.length === 2) {
       startDistance = getDistance(e.touches);
+    } else if (e.touches.length === 1 && scale > 1) {
+      isDragging = true;
+      startX = e.touches[0].clientX - translateX;
+      startY = e.touches[0].clientY - translateY;
     }
   });
 
@@ -421,15 +435,20 @@ return true;
     if (e.touches.length === 2) {
       let newDistance = getDistance(e.touches);
       scale *= newDistance / startDistance;
+      scale = Math.max(1, Math.min(scale, 3)); // Zoom limits
+      img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
       startDistance = newDistance;
-
-      img.style.transform = `scale(${Math.max(1, Math.min(scale, 3))})`; // Zoom limits: 1x to 3x
+      e.preventDefault();
+    } else if (isDragging && scale > 1) {
+      translateX = e.touches[0].clientX - startX;
+      translateY = e.touches[0].clientY - startY;
+      img.style.transform = `scale(${scale}) translate(${translateX}px, ${translateY}px)`;
       e.preventDefault();
     }
   });
 
   img.addEventListener("touchend", () => {
-    if (scale < 1) scale = 1;
+    isDragging = false;
   });
 </script>
 <!--
