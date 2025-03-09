@@ -329,7 +329,14 @@ text-decoration:none;
 </style>
 <br/>
 <center>
-<p style="font-weight:bold;color:pink;font-size:20px;">HOLIDAY <span id="Kp">2024</span></p>
+<p style="font-weight:bold; color:pink; font-size:20px;">
+  HOLIDAY <span id="Kp"></span>
+</p>
+
+<script>
+  document.getElementById("Kp").textContent = new Date().getFullYear();
+</script>
+
 
 
 
