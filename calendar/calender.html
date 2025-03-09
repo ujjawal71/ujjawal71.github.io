@@ -327,7 +327,7 @@ a
 text-decoration:none;
 }
 
- .image-container {
+.image-container {
     width: 100%;
     overflow: hidden;
     text-align: center;
@@ -337,13 +337,7 @@ text-decoration:none;
     width: 100%;
     height: auto;
     max-width: 100%;
-    transition: transform 0.3s ease-in-out;
-    cursor: zoom-in;
-  }
-
-  .zoomable-image:hover {
-    transform: scale(1.5); /* Zoom effect */
-    cursor: zoom-out;
+    touch-action: none; /* Allows pinch zoom */
   }
  
 </style>
@@ -403,8 +397,41 @@ return true;
 </script>
 
 <div class="image-container">
-  <img src="https://ujjawal71.github.io/calendar/beu-calander.jpg" alt="Calendar Image" class="zoomable-image">
+  <img id="zoomableImage" src="https://ujjawal71.github.io/calendar/beu-calander.jpg" alt="Calendar Image" class="zoomable-image">
 </div>
+
+<script>
+  let img = document.getElementById("zoomableImage");
+  let scale = 1;
+  let startDistance = 0;
+
+  function getDistance(touches) {
+    let dx = touches[0].clientX - touches[1].clientX;
+    let dy = touches[0].clientY - touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  img.addEventListener("touchstart", (e) => {
+    if (e.touches.length === 2) {
+      startDistance = getDistance(e.touches);
+    }
+  });
+
+  img.addEventListener("touchmove", (e) => {
+    if (e.touches.length === 2) {
+      let newDistance = getDistance(e.touches);
+      scale *= newDistance / startDistance;
+      startDistance = newDistance;
+
+      img.style.transform = `scale(${Math.max(1, Math.min(scale, 3))})`; // Zoom limits: 1x to 3x
+      e.preventDefault();
+    }
+  });
+
+  img.addEventListener("touchend", () => {
+    if (scale < 1) scale = 1;
+  });
+</script>
 <!--
 
 <input type="button" onclick="return toggleMe('1')" value="JANUARY" class="button"><br>
