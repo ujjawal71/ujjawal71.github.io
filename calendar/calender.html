@@ -326,6 +326,26 @@ a
 {
 text-decoration:none;
 }
+
+ .image-container {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .zoomable-image {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    transition: transform 0.3s ease-in-out;
+    cursor: zoom-in;
+  }
+
+  .zoomable-image:hover {
+    transform: scale(1.5); /* Zoom effect */
+    cursor: zoom-out;
+  }
+ 
 </style>
 <br/>
 <center>
@@ -382,8 +402,9 @@ return true;
 }
 </script>
 
-<img src="https://ujjawal71.github.io/calendar/beu-calander.jpg" alt="Calendar Image" style="width: 100%; height: auto; display: block;">
-
+<div class="image-container">
+  <img src="https://ujjawal71.github.io/calendar/beu-calander.jpg" alt="Calendar Image" class="zoomable-image">
+</div>
 <!--
 
 <input type="button" onclick="return toggleMe('1')" value="JANUARY" class="button"><br>
